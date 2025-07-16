@@ -3,58 +3,225 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Graham Roten Enterprises | Boone, NC</title>
+  <title>Graham Roten Enterprises | Professional Business Solutions in Boone, NC</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header class="navbar">
     <div class="container">
-      <h1 class="logo">GRE</h1>
+      <div class="logo">
+        <h1>Graham Roten Enterprises</h1>
+      </div>
       <nav id="nav">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <a href="#contact" class="cta-button">Get Quote</a>
       </nav>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 
   <section id="home" class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h2>Graham Roten Enterprises</h2>
-      <p>Building community in Boone, North Carolina</p>
+      <h2>Professional Business Solutions</h2>
+      <p class="hero-subtitle">Driving growth and building community in Boone, North Carolina</p>
+      <p class="hero-quote">"At Graham Roten Enterprises, we focus on delivering results that matter to your business and community."</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn btn-primary">Our Services</a>
+        <a href="#contact" class="btn btn-secondary">Contact Us</a>
+      </div>
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section class="stats-section">
     <div class="container">
-      <h3>About Us</h3>
-      <p>Graham Roten Enterprises is committed to delivering quality services to our community in Boone, NC. We strive for excellence and customer satisfaction in all that we do.</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Successful Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Satisfied Clients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Support Available</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="services" class="section dark">
+  <section id="services" class="services-section">
     <div class="container">
-      <h3>Our Services</h3>
-      <ul class="services-list">
-        <li>Consulting and Advisory</li>
-        <li>Real Estate Development</li>
-        <li>Community Engagement</li>
-      </ul>
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Comprehensive business solutions tailored to your needs</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Business Consulting</h3>
+          <p>Strategic planning and advisory services to help your business reach its full potential.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3>Real Estate Development</h3>
+          <p>Comprehensive real estate development services from planning to completion.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Community Engagement</h3>
+          <p>Building stronger communities through strategic partnerships and local initiatives.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Project Management</h3>
+          <p>Expert project management services ensuring timely and successful project completion.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Operational Excellence</h3>
+          <p>Streamlining operations and improving efficiency across all business functions.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Strategic Planning</h3>
+          <p>Long-term strategic planning to position your business for sustainable growth.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="about" class="about-section">
     <div class="container">
-      <h3>Contact Us</h3>
-      <p>Email: <a href="mailto:info@grahamroten.com">info@grahamroten.com</a></p>
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About Graham Roten Enterprises</h2>
+          <p class="lead">With over 15 years of experience in business consulting and community development, Graham Roten Enterprises has established itself as a trusted partner for businesses and organizations throughout Boone, North Carolina.</p>
+          <p>We specialize in delivering comprehensive business solutions that drive growth, improve operations, and strengthen community connections. Our team brings deep expertise across multiple industries, ensuring that we can provide tailored solutions that meet your unique challenges and opportunities.</p>
+          <p>Our commitment to excellence and customer satisfaction has made us the preferred choice for businesses looking to achieve sustainable growth and make a positive impact in their communities.</p>
+          <div class="about-features">
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Proven track record of success</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Local expertise and community focus</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Comprehensive business solutions</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Business meeting" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>Ready to take your business to the next level? Contact us today.</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <a href="mailto:info@grahamroten.com">info@grahamroten.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Location</h4>
+              <p>Boone, North Carolina</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Business Hours</h4>
+              <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Your Message" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Graham Roten Enterprises. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>Graham Roten Enterprises</h3>
+          <p>Professional business solutions in Boone, NC</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Graham Roten Enterprises. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
