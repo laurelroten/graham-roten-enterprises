@@ -1,0 +1,69 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - img "Graham Roten Enterprises Logo"
+  - text: Graham Roten Enterprises
+  - navigation:
+    - link "Home":
+      - /url: index.html
+    - link "Services":
+      - /url: index.html#services
+    - link "About":
+      - /url: index.html#about
+    - link "Contact":
+      - /url: index.html#contact
+    - link "Pay Bill":
+      - /url: index.html#pay-bill
+    - link "Get Quote":
+      - /url: index.html#contact
+- text: 
+- heading "Equipment Services" [level=1]
+- paragraph: Mobile repair and maintenance services for construction equipment and fleet vehicles.
+- heading "Service Overview" [level=2]
+- paragraph: Mobile repair and maintenance services for construction equipment and fleet vehicles. Our service trucks come to your location equipped with tools and parts to minimize downtime and keep your operations running smoothly.
+- heading "What We Provide" [level=3]
+- list:
+  - listitem: ✓ Mobile repair services
+  - listitem: ✓ Preventive maintenance programs
+  - listitem: ✓ Emergency breakdown service
+  - listitem: ✓ Fleet vehicle maintenance
+  - listitem: ✓ Hydraulic system repairs
+  - listitem: ✓ Field diagnostic services
+- heading "Service Areas" [level=3]
+- paragraph: We provide mobile equipment services throughout Boone, Banner Elk, Blowing Rock, Valle Crucis, Sugar Mountain, and the entire High Country region of North Carolina.
+- heading "Minimize Downtime" [level=3]
+- paragraph: Equipment downtime costs money. Our mobile service approach brings the shop to you, allowing us to diagnose and repair issues quickly without the need to transport equipment. We stock common parts and have access to a full supplier network for specialized components.
+- heading "Customer Review" [level=4]
+- blockquote: "\"Having them service our equipment on-site saves us time and money. Their mobile service truck is a game-changer for our operation.\""
+- text: Lisa Thompson, Mountain View Construction 24/7 Emergency Service 100% Licensed & Insured
+- link "Get Quote":
+  - /url: index.html#contact
+- paragraph: Call for immediate service or request a free estimate
+- heading "Equipment Service Capabilities" [level=2]
+- img "Mobile service truck"
+- img "Equipment maintenance and repair"
+- img "Fleet service capabilities"
+- contentinfo:
+  - img "Graham Roten Enterprises Logo"
+  - heading "Graham Roten Enterprises" [level=3]
+  - paragraph: Reliable trucking and materials delivery in Boone, NC
+  - heading "Quick Links" [level=4]
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: index.html
+    - listitem:
+      - link "Services":
+        - /url: index.html#services
+    - listitem:
+      - link "About":
+        - /url: index.html#about
+    - listitem:
+      - link "Contact":
+        - /url: index.html#contact
+    - listitem:
+      - link "Pay Bill":
+        - /url: index.html#pay-bill
+  - paragraph: © 2025 Graham Roten Enterprises. All rights reserved.
+```

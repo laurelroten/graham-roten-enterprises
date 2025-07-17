@@ -1,0 +1,69 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - img "Graham Roten Enterprises Logo"
+  - text: Graham Roten Enterprises
+  - navigation:
+    - link "Home":
+      - /url: index.html
+    - link "Services":
+      - /url: index.html#services
+    - link "About":
+      - /url: index.html#about
+    - link "Contact":
+      - /url: index.html#contact
+    - link "Pay Bill":
+      - /url: index.html#pay-bill
+    - link "Get Quote":
+      - /url: index.html#contact
+- text: 
+- heading "Septic Services" [level=1]
+- paragraph: Professional septic system installation, maintenance, and repair services for residential and commercial properties.
+- heading "Service Overview" [level=2]
+- paragraph: Complete septic system services including new installations, repairs, maintenance, and inspections. We work with certified septic designers and provide comprehensive solutions for residential and commercial properties.
+- heading "What We Provide" [level=3]
+- list:
+  - listitem: ✓ New septic system installation
+  - listitem: ✓ System repairs and maintenance
+  - listitem: ✓ Septic inspections and certifications
+  - listitem: ✓ Drain field installation and repair
+  - listitem: ✓ Pump system service
+  - listitem: ✓ Emergency septic services
+- heading "Service Areas" [level=3]
+- paragraph: We provide septic services throughout Boone, Banner Elk, Blowing Rock, Valle Crucis, Sugar Mountain, and the entire High Country region of North Carolina.
+- heading "Mountain Septic Expertise" [level=3]
+- paragraph: Mountain properties present unique challenges for septic systems including rocky soil, steep terrain, and varying elevation. Our team has extensive experience designing and installing septic systems that work effectively in High Country conditions while meeting all local health department requirements.
+- heading "Customer Review" [level=4]
+- blockquote: "\"When our septic system failed, they responded quickly and got us back up and running. Professional service and fair pricing.\""
+- text: Carol Williams, Property Manager 24/7 Emergency Service 100% Licensed & Insured
+- link "Get Quote":
+  - /url: index.html#contact
+- paragraph: Call for immediate service or request a free estimate
+- heading "Septic Installation Projects" [level=2]
+- img "Excavator working on septic installation"
+- img "Septic system excavation"
+- img "Site preparation for septic system"
+- contentinfo:
+  - img "Graham Roten Enterprises Logo"
+  - heading "Graham Roten Enterprises" [level=3]
+  - paragraph: Reliable trucking and materials delivery in Boone, NC
+  - heading "Quick Links" [level=4]
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: index.html
+    - listitem:
+      - link "Services":
+        - /url: index.html#services
+    - listitem:
+      - link "About":
+        - /url: index.html#about
+    - listitem:
+      - link "Contact":
+        - /url: index.html#contact
+    - listitem:
+      - link "Pay Bill":
+        - /url: index.html#pay-bill
+  - paragraph: © 2025 Graham Roten Enterprises. All rights reserved.
+```

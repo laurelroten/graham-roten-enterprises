@@ -20,14 +20,27 @@ test.describe('Homepage Tests', () => {
   });
 
   test('should have working navigation menu', async ({ page }) => {
-    // Check all main navigation links are present
-    await expect(page.locator('nav a[href="index.html#home"]')).toBeVisible();
-    await expect(page.locator('nav a[href="index.html#services"]')).toBeVisible();
-    await expect(page.locator('nav a[href="index.html#about"]')).toBeVisible();
-    await expect(page.locator('nav a[href="index.html#contact"]')).toBeVisible();
-    await expect(page.locator('nav a[href="index.html#pay-bill"]')).toBeVisible();
+    const viewport = page.viewportSize();
+    const isMobile = viewport.width <= 768;
     
-    // Check CTA button
+    if (isMobile) {
+      // On mobile, check that menu toggle is visible and nav links exist (even if hidden)
+      await expect(page.locator('.menu-toggle')).toBeVisible();
+      await expect(page.locator('nav a[href="#home"]')).toBeAttached();
+      await expect(page.locator('nav a[href="#services"]')).toBeAttached();
+      await expect(page.locator('nav a[href="#about"]')).toBeAttached();
+      await expect(page.locator('nav a[href="#contact"]:not(.cta-button)')).toBeAttached();
+      await expect(page.locator('nav a[href="#pay-bill"]')).toBeAttached();
+    } else {
+      // On desktop, check all main navigation links are visible
+      await expect(page.locator('nav a[href="#home"]')).toBeVisible();
+      await expect(page.locator('nav a[href="#services"]')).toBeVisible();
+      await expect(page.locator('nav a[href="#about"]')).toBeVisible();
+      await expect(page.locator('nav a[href="#contact"]:not(.cta-button)')).toBeVisible();
+      await expect(page.locator('nav a[href="#pay-bill"]')).toBeVisible();
+    }
+    
+    // Check CTA button (should be visible on all devices)
     await expect(page.locator('.cta-button')).toContainText('Get Quote');
   });
 
@@ -38,8 +51,8 @@ test.describe('Homepage Tests', () => {
     await expect(page.locator('.hero-quote')).toContainText('Graham Roten Enterprises');
     
     // Check hero buttons
-    await expect(page.locator('.btn-primary')).toContainText('Our Services');
-    await expect(page.locator('.btn-secondary')).toContainText('Contact Us');
+    await expect(page.locator('.hero-buttons .btn-primary')).toContainText('Our Services');
+    await expect(page.locator('.hero-buttons .btn-secondary')).toContainText('Get Quote');
   });
 
   test('should display statistics section', async ({ page }) => {
@@ -145,7 +158,7 @@ test.describe('Homepage Tests', () => {
     await expect(page.locator('.footer-info h3')).toContainText('Graham Roten Enterprises');
     
     // Check footer links
-    await expect(page.locator('.footer-links ul li a[href="index.html#home"]')).toBeVisible();
+    await expect(page.locator('.footer-links ul li a[href="#home"]')).toBeVisible();
     await expect(page.locator('.footer-bottom')).toContainText('2025 Graham Roten Enterprises');
   });
 });

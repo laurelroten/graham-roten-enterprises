@@ -1,0 +1,69 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - img "Graham Roten Enterprises Logo"
+  - text: Graham Roten Enterprises
+  - navigation:
+    - link "Home":
+      - /url: index.html
+    - link "Services":
+      - /url: index.html#services
+    - link "About":
+      - /url: index.html#about
+    - link "Contact":
+      - /url: index.html#contact
+    - link "Pay Bill":
+      - /url: index.html#pay-bill
+    - link "Get Quote":
+      - /url: index.html#contact
+- text: 
+- heading "Welding & Fabrication" [level=1]
+- paragraph: Custom metal fabrication and welding services for equipment repairs and specialized construction needs.
+- heading "Service Overview" [level=2]
+- paragraph: Custom metal fabrication and welding services for equipment repairs, structural work, and specialized construction needs. Our certified welders provide both field and shop services with the highest quality standards.
+- heading "What We Provide" [level=3]
+- list:
+  - listitem: ✓ Certified welding services
+  - listitem: ✓ Custom metal fabrication
+  - listitem: ✓ Equipment repair welding
+  - listitem: ✓ Structural steel work
+  - listitem: ✓ Mobile welding services
+  - listitem: ✓ Emergency repair services
+- heading "Service Areas" [level=3]
+- paragraph: We provide welding and fabrication services throughout Boone, Banner Elk, Blowing Rock, Valle Crucis, Sugar Mountain, and the entire High Country region of North Carolina.
+- heading "Certified Professionals" [level=3]
+- paragraph: Our welders hold current certifications and have extensive experience in both structural and repair welding. We work with all common metals and welding processes, ensuring strong, durable welds that meet or exceed industry standards for both safety and quality.
+- heading "Customer Review" [level=4]
+- blockquote: "\"Their welding work on our equipment trailer was top-notch. Strong, clean welds and reasonable pricing. Will definitely use them again.\""
+- text: Steve Anderson, Anderson Contracting 24/7 Emergency Service 100% Licensed & Insured
+- link "Get Quote":
+  - /url: index.html#contact
+- paragraph: Call for immediate service or request a free estimate
+- heading "Welding & Fabrication Work" [level=2]
+- img "Professional welding work"
+- img "Mobile welding service truck"
+- img "Custom fabrication lighting"
+- contentinfo:
+  - img "Graham Roten Enterprises Logo"
+  - heading "Graham Roten Enterprises" [level=3]
+  - paragraph: Reliable trucking and materials delivery in Boone, NC
+  - heading "Quick Links" [level=4]
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: index.html
+    - listitem:
+      - link "Services":
+        - /url: index.html#services
+    - listitem:
+      - link "About":
+        - /url: index.html#about
+    - listitem:
+      - link "Contact":
+        - /url: index.html#contact
+    - listitem:
+      - link "Pay Bill":
+        - /url: index.html#pay-bill
+  - paragraph: © 2025 Graham Roten Enterprises. All rights reserved.
+```

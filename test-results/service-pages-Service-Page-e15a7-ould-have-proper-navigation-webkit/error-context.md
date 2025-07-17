@@ -1,0 +1,69 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - img "Graham Roten Enterprises Logo"
+  - text: Graham Roten Enterprises
+  - navigation:
+    - link "Home":
+      - /url: index.html
+    - link "Services":
+      - /url: index.html#services
+    - link "About":
+      - /url: index.html#about
+    - link "Contact":
+      - /url: index.html#contact
+    - link "Pay Bill":
+      - /url: index.html#pay-bill
+    - link "Get Quote":
+      - /url: index.html#contact
+- text: 
+- heading "Site Preparation Services" [level=1]
+- paragraph: Complete site preparation services including excavation, grading, and foundation preparation for construction projects.
+- heading "Service Overview" [level=2]
+- paragraph: Complete site preparation services from initial clearing to final grading. We handle excavation, land clearing, foundation preparation, and precise grading to ensure your construction project starts on solid ground.
+- heading "What We Provide" [level=3]
+- list:
+  - listitem: ✓ Land clearing and tree removal
+  - listitem: ✓ Excavation for foundations and utilities
+  - listitem: ✓ Precise grading and leveling
+  - listitem: ✓ Drainage planning and installation
+  - listitem: ✓ Soil compaction and stabilization
+  - listitem: ✓ Environmental compliance and erosion control
+- heading "Service Areas" [level=3]
+- paragraph: We provide comprehensive site preparation throughout Boone, Banner Elk, Blowing Rock, Valle Crucis, Sugar Mountain, and the entire High Country region of North Carolina.
+- heading "Project Types & Expertise" [level=3]
+- paragraph: From residential home sites to commercial developments, we have the equipment and expertise to handle projects of all sizes. Our team understands the unique challenges of mountain terrain and provides solutions that work with the natural landscape while meeting all construction requirements.
+- heading "Customer Review" [level=4]
+- blockquote: "\"They transformed our rough hillside lot into a perfect building site. The attention to detail in the grading was impressive.\""
+- text: David Chen, Custom Home Builder 24/7 Emergency Service 100% Licensed & Insured
+- link "Get Quote":
+  - /url: index.html#contact
+- paragraph: Call for immediate service or request a free estimate
+- heading "Site Preparation Projects" [level=2]
+- img "Excavator working on site preparation"
+- img "Residential site excavation"
+- img "Commercial excavation work"
+- contentinfo:
+  - img "Graham Roten Enterprises Logo"
+  - heading "Graham Roten Enterprises" [level=3]
+  - paragraph: Reliable trucking and materials delivery in Boone, NC
+  - heading "Quick Links" [level=4]
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: index.html
+    - listitem:
+      - link "Services":
+        - /url: index.html#services
+    - listitem:
+      - link "About":
+        - /url: index.html#about
+    - listitem:
+      - link "Contact":
+        - /url: index.html#contact
+    - listitem:
+      - link "Pay Bill":
+        - /url: index.html#pay-bill
+  - paragraph: © 2025 Graham Roten Enterprises. All rights reserved.
+```
