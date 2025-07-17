@@ -199,6 +199,10 @@ document.addEventListener('DOMContentLoaded', function() {
   modal.addEventListener('click', function(e) {
     if (e.target === modal) {
       closeModal();
+    } else if (e.target.classList.contains('modal-contact')) {
+      // Modal CTA button functionality
+      closeModal();
+      // Smooth scroll to contact section will be handled by existing navigation code
     }
   });
 
@@ -207,12 +211,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.key === 'Escape' && modal.style.display === 'block') {
       closeModal();
     }
-  });
-
-  // Modal CTA button functionality
-  document.querySelector('.modal-contact').addEventListener('click', function(e) {
-    closeModal();
-    // Smooth scroll to contact section will be handled by existing navigation code
   });
 
   // Mount Stripe card element
