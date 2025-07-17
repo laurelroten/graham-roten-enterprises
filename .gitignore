@@ -16,3 +16,13 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+
+# Node.js dependencies
+node_modules/
+
+# Playwright test results and reports
+test-results/
+playwright-report/
+
+# Package lock file (optional - you can include this if you want)
+package-lock.json
