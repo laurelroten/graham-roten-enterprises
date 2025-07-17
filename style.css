@@ -277,27 +277,28 @@ body {
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: var(--primary-color);
+  background: var(--white);
   border-radius: 10px;
   margin-bottom: 1.5rem;
   position: relative;
+  border: 3px solid var(--primary-color);
 }
 
 .service-icon::after {
   content: '';
   position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
   background: linear-gradient(135deg, var(--highlight-color), var(--primary-color));
-  border-radius: 13px;
+  border-radius: 16px;
   z-index: -1;
 }
 
 .service-icon i {
   font-size: 2rem;
-  color: var(--white);
+  color: var(--primary-color);
 }
 
 .service-card h3 {
