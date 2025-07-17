@@ -74,6 +74,7 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
+  white-space: nowrap;
 }
 
 .navbar a {
@@ -764,6 +765,36 @@ body {
   color: var(--gray-300);
 }
 
+@media (max-width: 1024px) {
+  .navbar nav {
+    gap: 1.5rem;
+  }
+  
+  .navbar a {
+    font-size: 0.95rem;
+  }
+  
+  .cta-button {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar nav {
+    gap: 1rem;
+  }
+  
+  .navbar a {
+    font-size: 0.9rem;
+  }
+  
+  .cta-button {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar nav {
     display: none;
@@ -776,10 +807,20 @@ body {
     padding: 1rem;
     box-shadow: var(--shadow);
     gap: 1rem;
+    white-space: normal;
   }
 
   .navbar nav.active {
     display: flex;
+  }
+
+  .navbar nav a {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
   }
 
   .menu-toggle {
