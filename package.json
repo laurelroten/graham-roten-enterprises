@@ -1,0 +1,26 @@
+{
+  "name": "graham-roten-enterprises",
+  "version": "1.0.0",
+  "description": "Graham Roten Enterprises website with comprehensive construction and trucking services",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "serve": "python -m http.server 8080",
+    "serve:node": "npx serve -s . -l 8080"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "keywords": [
+    "construction",
+    "trucking",
+    "boone",
+    "north-carolina",
+    "website"
+  ],
+  "author": "Graham Roten Enterprises",
+  "license": "MIT"
+}
