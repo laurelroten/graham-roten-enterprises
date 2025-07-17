@@ -156,9 +156,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const learnMoreBtn = card.querySelector('.service-learn-more');
     if (learnMoreBtn) {
       learnMoreBtn.addEventListener('click', function(e) {
+        e.preventDefault();
         e.stopPropagation();
+        
         const serviceKey = card.dataset.service;
         const service = serviceData[serviceKey];
+        
+        console.log('Clicked service:', serviceKey, service); // Debug log
         
         if (service) {
           // Populate modal content
