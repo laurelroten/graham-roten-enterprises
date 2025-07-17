@@ -38,7 +38,7 @@ test.describe('Service Pages Tests', () => {
         await expect(page.locator('nav a[href="index.html"]')).toContainText('Home');
         await expect(page.locator('nav a[href="index.html#services"]')).toContainText('Services');
         await expect(page.locator('nav a[href="index.html#about"]')).toContainText('About');
-        await expect(page.locator('nav a[href="index.html#contact"]')).toContainText('Contact');
+        await expect(page.locator('nav a[href="index.html#contact"]:not(.cta-button)')).toContainText('Contact');
         
         // Check CTA button
         await expect(page.locator('.cta-button')).toContainText('Get Quote');
