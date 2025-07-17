@@ -490,6 +490,139 @@ body {
   font-size: 0.9rem;
 }
 
+.payment-section {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.payment-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.payment-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.feature-icon i {
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+.payment-feature h4 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.payment-feature p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.payment-form-container {
+  background: var(--gray-100);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.payment-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.payment-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--gray-300);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.payment-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+}
+
+.stripe-element {
+  background: var(--white);
+  padding: 1rem;
+  border: 2px solid var(--gray-300);
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.stripe-element:focus-within {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+.payment-btn {
+  width: 100%;
+  position: relative;
+  font-size: 1.1rem;
+  padding: 1.2rem;
+}
+
+.payment-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--white);
+  animation: spin 1s ease-in-out infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 .contact-section {
   padding: 6rem 0;
   background: var(--gray-100);
@@ -697,6 +830,11 @@ body {
   }
 
   .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .payment-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }

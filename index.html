@@ -6,6 +6,7 @@
   <title>Graham Roten Enterprises | Reliable Hauling & Materials Delivery in Boone, NC</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
   <header class="navbar">
@@ -19,6 +20,7 @@
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <a href="#pay-bill">Pay Bill</a>
         <a href="#contact" class="cta-button">Get Quote</a>
       </nav>
       <button class="menu-toggle" onclick="toggleMenu()">
@@ -203,6 +205,77 @@
     </div>
   </section>
 
+  <section id="pay-bill" class="payment-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Pay Your Bill</h2>
+        <p>Secure online payment for your Graham Roten Enterprises services</p>
+      </div>
+      <div class="payment-content">
+        <div class="payment-info">
+          <div class="payment-feature">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div>
+              <h4>Secure Payment</h4>
+              <p>Your payment information is encrypted and secure</p>
+            </div>
+          </div>
+          <div class="payment-feature">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <h4>Instant Processing</h4>
+              <p>Payments are processed immediately and confirmed via email</p>
+            </div>
+          </div>
+          <div class="payment-feature">
+            <div class="feature-icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <div>
+              <h4>Multiple Payment Methods</h4>
+              <p>Accept all major credit cards and bank transfers</p>
+            </div>
+          </div>
+        </div>
+        <div class="payment-form-container">
+          <form id="payment-form" class="payment-form">
+            <div class="form-group">
+              <label for="invoice-number">Invoice Number</label>
+              <input type="text" id="invoice-number" name="invoice-number" placeholder="Enter your invoice number" required>
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount ($)</label>
+              <input type="number" id="amount" name="amount" placeholder="0.00" step="0.01" min="1" required>
+            </div>
+            <div class="form-group">
+              <label for="customer-name">Customer Name</label>
+              <input type="text" id="customer-name" name="customer-name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="customer-email">Email Address</label>
+              <input type="email" id="customer-email" name="customer-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="card-element">Card Information</label>
+              <div id="card-element" class="stripe-element">
+                <!-- Stripe Elements will create form elements here -->
+              </div>
+              <div id="card-errors" role="alert" class="error-message"></div>
+            </div>
+            <button type="submit" id="submit-payment" class="btn btn-primary payment-btn">
+              <span id="button-text">Pay Now</span>
+              <div id="spinner" class="spinner hidden"></div>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="contact-section">
     <div class="container">
       <div class="section-header">
@@ -277,6 +350,7 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#pay-bill">Pay Bill</a></li>
           </ul>
         </div>
       </div>
