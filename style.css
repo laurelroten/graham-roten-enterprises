@@ -4,7 +4,7 @@
   --primary-color: #1a1a1a;
   --secondary-color: #333333;
   --accent-color: #f8f9fa;
-  --highlight-color: #ff6b35;
+  --highlight-color: #004aad;
   --text-color: #333;
   --text-light: #666;
   --white: #ffffff;
@@ -138,7 +138,7 @@ h5, h6 {
 }
 
 .cta-button:hover {
-  background: #e55a2b !important;
+  background: #003d8f !important;
 }
 
 .menu-toggle {
