@@ -87,7 +87,7 @@ test.describe('Service Pages Tests', () => {
         await expect(page.locator('.service-stats')).toBeVisible();
         const stats = page.locator('.service-stats .stat');
         await expect(stats).toHaveCount(2);
-        await expect(stats.first().locator('.stat-number')).toContainText('24/7');
+        await expect(stats.first().locator('.stat-number')).toContainText('10+');
         await expect(stats.last().locator('.stat-number')).toContainText('100%');
         
         // Check CTA
