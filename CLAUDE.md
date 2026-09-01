@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static website for **Graham Roten Enterprises**, a construction and trucking services company located in Boone, NC. The site is designed for deployment to GitHub Pages and uses plain HTML, CSS, and minimal JavaScript.
+This is a static website for **GR Enterprises**, a construction and trucking services company located in Boone, NC. The site is designed for deployment to GitHub Pages and uses plain HTML, CSS, and minimal JavaScript.
 
 ## Development Commands
 

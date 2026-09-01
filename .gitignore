@@ -26,3 +26,7 @@ playwright-report/
 
 # Package lock file (optional - you can include this if you want)
 package-lock.json
+
+# Cloudflare build output
+dist/
+.wrangler/

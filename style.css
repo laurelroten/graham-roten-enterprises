@@ -1105,3 +1105,106 @@ h5, h6 {
     font-size: 2.5rem;
   }
 }
+
+/* ---- Phone links (header + footer) ---- */
+.nav-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--highlight-color);
+}
+
+.nav-phone i {
+  font-size: 0.9em;
+}
+
+.nav-phone:hover {
+  color: #003d8f;
+}
+
+.footer-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.footer-phone:hover {
+  text-decoration: underline;
+}
+
+/* On phones the number is the primary action: give it full width
+   and a real tap target (44px min, per WCAG 2.5.5). */
+@media (max-width: 768px) {
+  .nav-phone {
+    justify-content: center;
+    min-height: 44px;
+    font-size: 1.1rem;
+  }
+}
+
+/* ---- Contact form: labels, honeypot, status ---- */
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.form-group label .optional {
+  font-weight: 400;
+  color: var(--text-light);
+}
+
+/* Honeypot: off-screen rather than display:none, so bots that skip
+   hidden fields still fill it in. Never shown to people. */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-status {
+  margin: 1rem 0 0;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status.is-ok {
+  background: #e6f4ee;
+  color: #05683f;
+  border-left: 3px solid #05683f;
+}
+
+.form-status.is-error {
+  background: #fdeceb;
+  color: #b42318;
+  border-left: 3px solid #b42318;
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Contact section with the form hidden: one centred column instead of an
+   empty second grid cell. Remove this rule when the form comes back. */
+.contact-content--solo {
+  grid-template-columns: 1fr;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}

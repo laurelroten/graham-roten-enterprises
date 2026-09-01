@@ -1,18 +1,24 @@
 {
-  "name": "graham-roten-enterprises",
+  "name": "gr-enterprises",
   "version": "1.0.0",
-  "description": "Graham Roten Enterprises website with comprehensive construction and trucking services",
+  "description": "GR Enterprises website with comprehensive construction and trucking services",
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
     "test:report": "playwright show-report",
-    "serve": "python -m http.server 8080",
-    "serve:node": "npx serve -s . -l 8080"
+    "serve": "python3 -m http.server 8080",
+    "serve:node": "npx serve -s . -l 8080",
+    "cf:dev": "npm run cf:build && wrangler dev",
+    "cf:deploy": "npm run cf:build && wrangler deploy",
+    "cf:login": "wrangler login",
+    "cf:whoami": "wrangler whoami",
+    "cf:build": "./scripts/build.sh"
   },
   "devDependencies": {
-    "@playwright/test": "^1.40.0"
+    "@playwright/test": "^1.40.0",
+    "wrangler": "^4.128.0"
   },
   "keywords": [
     "construction",
@@ -21,6 +27,6 @@
     "north-carolina",
     "website"
   ],
-  "author": "Graham Roten Enterprises",
+  "author": "GR Enterprises",
   "license": "MIT"
 }

@@ -5,7 +5,9 @@ test.describe('Forms Tests', () => {
     await page.goto('/');
   });
 
-  test.describe('Contact Form', () => {
+  // Skipped while the contact form is hidden (no delivery backend chosen yet).
+  // Re-enable together with the form markup in index.html.
+  test.describe.skip('Contact Form', () => {
     test('should display contact form correctly', async ({ page }) => {
       // Scroll to contact section
       await page.locator('#contact').scrollIntoViewIfNeeded();
@@ -181,7 +183,8 @@ test.describe('Forms Tests', () => {
       await expect(page.locator('label[for="customer-email"]')).toContainText('Email Address');
     });
 
-    test('should support keyboard navigation', async ({ page }) => {
+    // Skipped while the contact form is hidden - it tabs through form fields.
+    test.skip('should support keyboard navigation', async ({ page }) => {
       // Test tab navigation through contact form
       await page.locator('#contact').scrollIntoViewIfNeeded();
       

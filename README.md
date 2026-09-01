@@ -1,6 +1,6 @@
-# Graham Roten Enterprises Website
+# GR Enterprises Website
 
-This repository hosts the static website for **Graham Roten Enterprises** located in Boone, NC. The site is designed for deployment to GitHub Pages and uses plain HTML, CSS and a small amount of JavaScript.
+This repository hosts the static website for **GR Enterprises** located in Boone, NC. The site is designed for deployment to GitHub Pages and uses plain HTML, CSS and a small amount of JavaScript.
 
 ## Development
 

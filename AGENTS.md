@@ -1,4 +1,4 @@
-# Repository Guidelines for Graham Roten Enterprises Website
+# Repository Guidelines for GR Enterprises Website
 
 ## Development Workflow
 - Use modern, responsive design practices.

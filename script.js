@@ -28,22 +28,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  const form = document.querySelector('.contact-form form');
+  const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', function(e) {
+    const status = document.getElementById('form-status');
+    const button = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      
-      const formData = new FormData(this);
-      const name = formData.get('name') || this.querySelector('input[placeholder="Your Name"]').value;
-      const email = formData.get('email') || this.querySelector('input[placeholder="Your Email"]').value;
-      const subject = formData.get('subject') || this.querySelector('input[placeholder="Subject"]').value;
-      const message = formData.get('message') || this.querySelector('textarea').value;
-      
-      if (name && email && subject && message) {
-        alert('Thank you for your message! We will get back to you soon.');
-        this.reset();
-      } else {
-        alert('Please fill in all fields.');
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const original = button.textContent;
+      button.disabled = true;
+      button.textContent = 'Sending...';
+      status.textContent = '';
+      status.className = 'form-status';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        const result = await response.json();
+
+        status.textContent = result.message;
+        status.className = 'form-status ' + (result.ok ? 'is-ok' : 'is-error');
+        if (result.ok) form.reset();
+      } catch (err) {
+        status.textContent =
+          "Sorry — that didn't send. Please call (828) 262-5593 and we'll take the details.";
+        status.className = 'form-status is-error';
+      } finally {
+        button.disabled = false;
+        button.textContent = original;
       }
     });
   }

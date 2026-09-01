@@ -7,7 +7,7 @@ test.describe('Homepage Tests', () => {
 
   test('should load homepage successfully', async ({ page }) => {
     // Check page title
-    await expect(page).toHaveTitle(/Graham Roten Enterprises/);
+    await expect(page).toHaveTitle(/GR Enterprises/);
     
     // Check main heading
     await expect(page.locator('h2').first()).toContainText('Construction Services & Materials Delivery');
@@ -16,7 +16,7 @@ test.describe('Homepage Tests', () => {
     await expect(page.locator('.logo img')).toBeVisible();
     
     // Check company name is visible
-    await expect(page.locator('.company-name')).toContainText('Graham Roten Enterprises');
+    await expect(page.locator('.company-name')).toContainText('GR Enterprises');
   });
 
   test('should have working navigation menu', async ({ page }) => {
@@ -48,7 +48,7 @@ test.describe('Homepage Tests', () => {
     // Check hero content
     await expect(page.locator('.hero-content h2')).toContainText('Construction Services & Materials Delivery');
     await expect(page.locator('.hero-subtitle')).toContainText('Comprehensive site services');
-    await expect(page.locator('.hero-quote')).toContainText('Graham Roten Enterprises');
+    await expect(page.locator('.hero-quote')).toContainText('GR Enterprises');
     
     // Check hero buttons
     await expect(page.locator('.hero-buttons .btn-primary')).toContainText('Our Services');
@@ -113,7 +113,7 @@ test.describe('Homepage Tests', () => {
   test('should display about section', async ({ page }) => {
     // Check about section
     await expect(page.locator('#about')).toBeVisible();
-    await expect(page.locator('.about-section h2')).toContainText('About Graham Roten Enterprises');
+    await expect(page.locator('.about-section h2')).toContainText('About GR Enterprises');
     
     // Check about content
     await expect(page.locator('.lead')).toContainText('decade of experience');
@@ -132,11 +132,12 @@ test.describe('Homepage Tests', () => {
     // Check contact info
     await expect(page.locator('.contact-details a[href="mailto:info@grahamroten.com"]')).toBeVisible();
     
-    // Check contact form
-    await expect(page.locator('.contact-form')).toBeVisible();
-    await expect(page.locator('input[placeholder="Your Name"]')).toBeVisible();
-    await expect(page.locator('input[placeholder="Your Email"]')).toBeVisible();
-    await expect(page.locator('textarea[placeholder="Your Message"]')).toBeVisible();
+    // Phone is the primary contact route while the form is hidden.
+    await expect(page.locator('.contact-details a[href="tel:+18282625593"]')).toBeVisible();
+
+    // The contact form is intentionally not on the page yet — no delivery
+    // backend. Assert it stays absent so it can't reappear unnoticed.
+    await expect(page.locator('.contact-form')).toHaveCount(0);
   });
 
   test('should display payment section', async ({ page }) => {
@@ -155,10 +156,10 @@ test.describe('Homepage Tests', () => {
   test('should display footer', async ({ page }) => {
     // Check footer
     await expect(page.locator('.footer')).toBeVisible();
-    await expect(page.locator('.footer-info h3')).toContainText('Graham Roten Enterprises');
+    await expect(page.locator('.footer-info h3')).toContainText('GR Enterprises');
     
     // Check footer links
     await expect(page.locator('.footer-links ul li a[href="#home"]')).toBeVisible();
-    await expect(page.locator('.footer-bottom')).toContainText('2025 Graham Roten Enterprises');
+    await expect(page.locator('.footer-bottom')).toContainText('2026 GR Enterprises');
   });
 });

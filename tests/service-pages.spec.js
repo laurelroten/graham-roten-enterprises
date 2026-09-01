@@ -32,7 +32,7 @@ test.describe('Service Pages Tests', () => {
       test('should have proper navigation', async ({ page }) => {
         // Check logo and company name
         await expect(page.locator('.logo img')).toBeVisible();
-        await expect(page.locator('.company-name')).toContainText('Graham Roten Enterprises');
+        await expect(page.locator('.company-name')).toContainText('GR Enterprises');
         
         // Check navigation links back to main site
         await expect(page.locator('nav a[href="index.html"]')).toContainText('Home');
@@ -112,11 +112,11 @@ test.describe('Service Pages Tests', () => {
       test('should display footer', async ({ page }) => {
         // Check footer
         await expect(page.locator('.footer')).toBeVisible();
-        await expect(page.locator('.footer-info h3')).toContainText('Graham Roten Enterprises');
+        await expect(page.locator('.footer-info h3')).toContainText('GR Enterprises');
         
         // Check footer links
         await expect(page.locator('.footer-links ul li a[href="index.html"]')).toContainText('Home');
-        await expect(page.locator('.footer-bottom')).toContainText('2025 Graham Roten Enterprises');
+        await expect(page.locator('.footer-bottom')).toContainText('2026 GR Enterprises');
       });
 
       test('should be responsive on mobile', async ({ page }) => {

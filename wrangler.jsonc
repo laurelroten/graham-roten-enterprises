@@ -1,0 +1,46 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gr-enterprises",
+  "compatibility_date": "2026-09-01",
+
+  // Keep the *.workers.dev URL alive alongside the custom domains; adding
+  // "routes" disables it by default. Useful as a fallback while DNS/TLS
+  // settle, and for checking a deploy without touching the live domain.
+  "workers_dev": true,
+
+  // Contact form handler. Static assets are matched and served first; only
+  // /api/contact falls through to this Worker.
+  "main": "src/index.js",
+
+  // The address the notification email is sent to. It must be a verified
+  // destination address on the Cloudflare account.
+  "send_email": [
+    { "name": "NOTIFY", "destination_address": "grahamroten@gmail.com" }
+  ],
+
+  // SEND_DOMAIN must be onboarded to Cloudflare Email Service (SPF + DKIM).
+  // CONTACT_TO must match the verified destination address above.
+  "vars": {
+    "SEND_DOMAIN": "grenterprisesllc.com",
+    "CONTACT_TO": "grahamroten@gmail.com"
+  },
+
+  // Custom domains. Cloudflare creates and manages the DNS records for these
+  // as part of attaching them to the Worker.
+  "routes": [
+    { "pattern": "grenterprisesllc.com", "custom_domain": true },
+    { "pattern": "www.grenterprisesllc.com", "custom_domain": true }
+  ],
+
+  // Static-only Worker: no server code, Cloudflare just serves these files.
+  // dist/ is assembled by scripts/build.sh so that repo tooling (node_modules,
+  // tests, docs) never gets uploaded. Run `npm run cf:build` before deploying,
+  // or just use `npm run cf:deploy`, which does both.
+  "assets": {
+    "directory": "./dist",
+    // "/heavy-hauling" resolves to heavy-hauling.html, and the .html URL
+    // redirects to the clean one.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
