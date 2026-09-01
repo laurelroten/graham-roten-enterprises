@@ -1,6 +1,8 @@
 # GR Enterprises Website
 
-This repository hosts the static website for **GR Enterprises** located in Boone, NC. The site is designed for deployment to GitHub Pages and uses plain HTML, CSS and a small amount of JavaScript.
+This repository hosts the static website for **GR Enterprises** located in Boone, NC. The site is deployed to Cloudflare Workers and uses plain HTML, CSS and a small amount of JavaScript.
+
+Live at **https://grenterprisesllc.com**
 
 ## Development
 
@@ -8,7 +10,21 @@ To view the site locally, simply open `index.html` in your browser. Edits to sty
 
 ## Deployment
 
-GitHub Actions is configured to automatically deploy the contents of the `main` branch to GitHub Pages. Any pushes to `main` will trigger a deployment.
+Deployment is manual, via Wrangler:
+
+```bash
+npm run cf:deploy
+```
+
+That runs `scripts/build.sh` to assemble `dist/` (site files only — no `node_modules`,
+tests or docs), then deploys it to Cloudflare Workers. The Worker serves the static
+assets and handles `POST /api/contact`.
+
+Custom domains `grenterprisesllc.com` and `www.grenterprisesllc.com` are attached in
+`wrangler.jsonc`; Cloudflare manages their DNS records.
+
+The site was previously auto-deployed to GitHub Pages. That workflow has been removed —
+Cloudflare is now the only deployment target.
 
 ## Future Work
 

@@ -128,10 +128,14 @@ Test configuration in `playwright.config.js` includes:
 
 ## Deployment
 
-- Automatic deployment via GitHub Actions to GitHub Pages
-- Deploys from `main` branch
-- No build process required - static files served directly
-- Any push to main triggers deployment
+- Deployed to Cloudflare Workers as a static-asset Worker with a small fetch handler
+- Live at https://grenterprisesllc.com (and www), configured in `wrangler.jsonc`
+- Deploy with `npm run cf:deploy` — this is manual, not triggered by pushes
+- `scripts/build.sh` assembles `dist/` first, so repo tooling is never uploaded.
+  Pointing Wrangler at the repo root instead uploads ~2700 files; a `.assetsignore`
+  was tried and is not honoured
+- `src/index.js` handles `POST /api/contact`; all other paths are served as assets
+- The GitHub Pages workflow was removed — Cloudflare is the only deploy target
 
 ## Important Notes
 
