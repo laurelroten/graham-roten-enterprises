@@ -38,6 +38,9 @@
   // or just use `npm run cf:deploy`, which does both.
   "assets": {
     "directory": "./dist",
+    // Bound so the Worker can hand unmatched paths back to asset handling
+    // and get the custom 404 page rather than a bare text response.
+    "binding": "ASSETS",
     // "/heavy-hauling" resolves to heavy-hauling.html, and the .html URL
     // redirects to the clean one.
     "html_handling": "auto-trailing-slash",

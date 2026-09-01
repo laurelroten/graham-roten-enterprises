@@ -1,6 +1,14 @@
 function toggleMenu() {
   const nav = document.getElementById('nav');
-  nav.classList.toggle('active');
+  const open = nav.classList.toggle('active');
+  // Tell screen readers whether the menu is open, not just that a button exists.
+  const button = document.querySelector('.menu-toggle');
+  if (button) button.setAttribute('aria-expanded', String(open));
+}
+
+/** True when the visitor has asked their OS to minimise animation. */
+function prefersReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -19,11 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
         window.scrollTo({
           top: offsetTop,
-          behavior: 'smooth'
+          behavior: prefersReducedMotion() ? 'auto' : 'smooth'
         });
-        
+
         const nav = document.getElementById('nav');
         nav.classList.remove('active');
+        const button = document.querySelector('.menu-toggle');
+        if (button) button.setAttribute('aria-expanded', 'false');
       }
     });
   });

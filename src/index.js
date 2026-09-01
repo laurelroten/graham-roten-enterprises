@@ -63,8 +63,10 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // Anything that isn't the form endpoint goes back to asset handling, which
+    // applies not_found_handling and serves the branded 404 page.
     if (url.pathname !== "/api/contact") {
-      return new Response("Not found", { status: 404 });
+      return env.ASSETS.fetch(request);
     }
     if (request.method !== "POST") {
       return new Response("Method not allowed", {

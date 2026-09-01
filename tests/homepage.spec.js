@@ -9,8 +9,10 @@ test.describe('Homepage Tests', () => {
     // Check page title
     await expect(page).toHaveTitle(/GR Enterprises/);
     
-    // Check main heading
-    await expect(page.locator('h2').first()).toContainText('Construction Services & Materials Delivery');
+    // The hero is the page's h1 (it used to be an h2, which left the
+    // homepage with no h1 at all).
+    await expect(page.locator('h1')).toHaveCount(1);
+    await expect(page.locator('h1')).toContainText('Construction Services & Materials Delivery');
     
     // Check logo is visible
     await expect(page.locator('.logo img')).toBeVisible();
@@ -46,7 +48,7 @@ test.describe('Homepage Tests', () => {
 
   test('should display hero section correctly', async ({ page }) => {
     // Check hero content
-    await expect(page.locator('.hero-content h2')).toContainText('Construction Services & Materials Delivery');
+    await expect(page.locator('.hero-content h1')).toContainText('Construction Services & Materials Delivery');
     await expect(page.locator('.hero-subtitle')).toContainText('Comprehensive site services');
     await expect(page.locator('.hero-quote')).toContainText('GR Enterprises');
     

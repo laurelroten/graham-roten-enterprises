@@ -149,6 +149,6 @@ test.describe('Service Pages Tests', () => {
     await page.click('nav a[href="index.html"]');
     
     // Check we're back on homepage
-    await expect(page.locator('.hero-content h2')).toContainText('Construction Services & Materials Delivery');
+    await expect(page.locator('.hero-content h1')).toContainText('Construction Services & Materials Delivery');
   });
 });
