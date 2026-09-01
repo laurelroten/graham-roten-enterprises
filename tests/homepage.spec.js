@@ -48,7 +48,7 @@ test.describe('Homepage Tests', () => {
     // Check hero content
     await expect(page.locator('.hero-content h1')).toContainText('Construction Services & Materials Delivery');
     await expect(page.locator('.hero-subtitle')).toContainText('Comprehensive site services');
-    await expect(page.locator('.hero-quote')).toContainText('GR Enterprises');
+    await expect(page.locator('.hero-quote')).toContainText('GRE');
     
     // Check hero buttons
     await expect(page.locator('.hero-buttons .btn-primary')).toContainText('Our Services');
@@ -112,7 +112,7 @@ test.describe('Homepage Tests', () => {
   test('should display about section', async ({ page }) => {
     // Check about section
     await expect(page.locator('#about')).toBeVisible();
-    await expect(page.locator('.about-section h2')).toContainText('About GR Enterprises');
+    await expect(page.locator('.about-section h2')).toContainText('About GRE');
     
     // Check about content
     await expect(page.locator('.lead')).toContainText('decade of experience');

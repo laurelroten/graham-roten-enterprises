@@ -16,7 +16,7 @@
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
   
   /* Font families */
-  --font-heading: Impact, "Arial Black", "Franklin Gothic Bold", Arial, sans-serif;
+  --font-heading: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -36,8 +36,10 @@ body {
 /* Heading styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 900;
-  letter-spacing: 0.5px;
+  font-weight: 800;
+  /* Impact was condensed and needed positive tracking. Montserrat is wider,
+     so display sizes want it pulled slightly tighter instead. */
+  letter-spacing: -0.015em;
 }
 
 h1 {
@@ -139,8 +141,8 @@ h5, h6 {
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   font-family: var(--font-heading);
-  font-weight: 900;
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
 }
@@ -220,8 +222,8 @@ h5, h6 {
   border-radius: 5px;
   text-decoration: none;
   font-family: var(--font-heading);
-  font-weight: 900;
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   transition: all 0.3s ease;
   border: 2px solid transparent;
   text-transform: uppercase;
@@ -898,7 +900,7 @@ h5, h6 {
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.875rem;
   margin-bottom: 1rem;
 }
 
@@ -908,9 +910,19 @@ h5, h6 {
   filter: invert(1);
 }
 
+/* Same lockup as the header wordmark, on a dark ground: uppercase Montserrat
+   with a rule tying it to the mark. Rule is white at low alpha so it reads as
+   a hairline rather than a hard edge. */
 .footer-info h3 {
   color: var(--white);
-  font-size: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-left: 0.875rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.35);
+  line-height: 1.2;
   margin: 0;
 }
 
