@@ -90,20 +90,29 @@ h5, h6 {
 .logo {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.875rem;
 }
 
 .logo img {
-  height: 50px;
+  height: 42px;
   width: auto;
 }
 
+/* Wordmark. Montserrat rather than the Impact heading face: Impact ships a
+   single weight (so font-weight had no effect) and is a headline face, too
+   heavy beside the mark at this size. Uppercase and tracked out reads as
+   signage, which suits the trade. The rule ties mark and name into one
+   lockup instead of two adjacent elements. */
 .company-name {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   color: var(--primary-color);
-  font-size: 1.3rem;
-  font-weight: 900;
-  letter-spacing: 0.5px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-left: 0.875rem;
+  border-left: 2px solid var(--gray-300);
+  line-height: 1.2;
 }
 
 .navbar nav {
@@ -998,9 +1007,12 @@ h5, h6 {
   }
 
   .company-name {
-    /* Was display:none. The business name is worth keeping on the
-       device most visitors arrive on; shrink it rather than hide it. */
-    font-size: 1rem;
+    /* Was display:none. The business name is worth keeping on the device
+       most visitors arrive on; shrink it rather than hide it. Tracking
+       and padding tighten too, so the lockup clears the hamburger at 375px. */
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    padding-left: 0.625rem;
   }
 
   .logo img {
