@@ -129,7 +129,7 @@ test.describe('Homepage Tests', () => {
     await expect(page.locator('.contact-section h2')).toContainText('Get In Touch');
     
     // Check contact info
-    await expect(page.locator('.contact-details a[href="mailto:info@grahamroten.com"]')).toBeVisible();
+    await expect(page.locator('.contact-details a[href="mailto:grahamroten@gmail.com"]')).toBeVisible();
     
     // Phone is the primary contact route while the form is hidden.
     await expect(page.locator('.contact-details a[href="tel:+18282625593"]')).toBeVisible();

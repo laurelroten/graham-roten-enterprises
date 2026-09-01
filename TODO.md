@@ -8,11 +8,13 @@ Things worth doing, not yet done. Roughly in value order.
   (commented out in `index.html`). Cloudflare Email Sending needs the Workers
   Paid plan ($5/mo); the free alternative is proxying to Web3Forms from the
   existing Worker. Until one is chosen the form stays off the page.
-- **Contact email is on the wrong domain.** The site lists
-  `info@grahamroten.com`, which belongs to an unrelated site. Cloudflare Email
-  *Routing* is free on the current plan and would forward
-  `info@grenterprisesllc.com` to any inbox. Needs the mailbox to exist before
-  the link changes, or mail silently drops.
+- **Contact email is a personal Gmail address.** Now `grahamroten@gmail.com`,
+  which is deliverable and owned — an improvement on the previous
+  `info@grahamroten.com`, which belonged to an unrelated site. Still worth
+  moving to `info@grenterprisesllc.com`: it matches the domain and reads as a
+  business rather than a person. Cloudflare Email *Routing* is free on the
+  current plan and forwards to any inbox, including this one. Set the mailbox
+  up before changing the link, or mail silently drops.
 
 ## SEO
 

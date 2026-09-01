@@ -109,7 +109,7 @@ Test configuration in `playwright.config.js` includes:
 - Single JavaScript file for all interactive functionality
 
 ### Content Management
-- Contact email: info@grahamroten.com
+- Contact email: grahamroten@gmail.com (interim — see TODO.md)
 - Company location: Boone, North Carolina
 - All service content is statically defined in HTML
 - Image assets are referenced relatively from `/images/` folder
