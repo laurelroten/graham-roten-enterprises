@@ -32,14 +32,12 @@ test.describe('Homepage Tests', () => {
       await expect(page.locator('nav a[href="#services"]')).toBeAttached();
       await expect(page.locator('nav a[href="#about"]')).toBeAttached();
       await expect(page.locator('nav a[href="#contact"]:not(.cta-button)')).toBeAttached();
-      await expect(page.locator('nav a[href="#pay-bill"]')).toBeAttached();
     } else {
       // On desktop, check all main navigation links are visible
       await expect(page.locator('nav a[href="#home"]')).toBeVisible();
       await expect(page.locator('nav a[href="#services"]')).toBeVisible();
       await expect(page.locator('nav a[href="#about"]')).toBeVisible();
       await expect(page.locator('nav a[href="#contact"]:not(.cta-button)')).toBeVisible();
-      await expect(page.locator('nav a[href="#pay-bill"]')).toBeVisible();
     }
     
     // Check CTA button (should be visible on all devices)
@@ -84,11 +82,10 @@ test.describe('Homepage Tests', () => {
   });
 
   test('should have working service card links', async ({ page }) => {
-    // Test clicking on a service card link
-    const heavyHaulingLink = page.locator('a[href="heavy-hauling.html"]');
+    // Scope to the service card. A bare href selector also matches the
+    // Recent Projects tile pointing at the same page, which trips strict mode.
+    const heavyHaulingLink = page.locator('.service-card a[href="heavy-hauling.html"]');
     await expect(heavyHaulingLink).toBeVisible();
-    
-    // Click and check it navigates (but don't actually navigate in this test)
     await expect(heavyHaulingLink).toHaveAttribute('href', 'heavy-hauling.html');
   });
 
@@ -142,7 +139,9 @@ test.describe('Homepage Tests', () => {
     await expect(page.locator('.contact-form')).toHaveCount(0);
   });
 
-  test('should display payment section', async ({ page }) => {
+  // The payment section no longer exists on the site — #pay-bill is absent and
+  // the links to it were removed. Kept, skipped, in case billing is rebuilt.
+  test.skip('should display payment section', async ({ page }) => {
     // Check payment section
     await expect(page.locator('#pay-bill')).toBeVisible();
     await expect(page.locator('.payment-section h2')).toContainText('Pay Your Bill');

@@ -73,7 +73,9 @@ test.describe('Forms Tests', () => {
     });
   });
 
-  test.describe('Payment Form', () => {
+  // The payment section was removed from the site: #pay-bill no longer exists.
+  // Kept, skipped, in case billing is rebuilt later.
+  test.describe.skip('Payment Form', () => {
     test('should display payment form correctly', async ({ page }) => {
       // Scroll to payment section
       await page.locator('#pay-bill').scrollIntoViewIfNeeded();
@@ -166,7 +168,9 @@ test.describe('Forms Tests', () => {
   });
 
   test.describe('Form Accessibility', () => {
-    test('should have proper form labels and accessibility', async ({ page }) => {
+    // Covers the contact form (currently hidden) and the payment form
+    // (removed). Re-enable alongside whichever comes back.
+    test.skip('should have proper form labels and accessibility', async ({ page }) => {
       // Check contact form accessibility
       await page.locator('#contact').scrollIntoViewIfNeeded();
       

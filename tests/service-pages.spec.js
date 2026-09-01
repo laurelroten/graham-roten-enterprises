@@ -69,8 +69,11 @@ test.describe('Service Pages Tests', () => {
         const features = page.locator('.service-features li');
         await expect(features.first()).toBeVisible();
         
-        // Check service areas section
-        await expect(page.locator('.service-main h3')).toContainText('Service Areas');
+        // Service pages carry several h3s (What We Provide, Service Areas, and a
+        // page-specific one), so match the heading rather than the whole set.
+        await expect(
+          page.locator('.service-main h3', { hasText: 'Service Areas' })
+        ).toBeVisible();
       });
 
       test('should display sidebar with testimonial', async ({ page }) => {
@@ -138,14 +141,20 @@ test.describe('Service Pages Tests', () => {
     // Start on homepage
     await page.goto('/');
     
-    // Click on Heavy Hauling service
-    await page.click('a[href="heavy-hauling.html"]');
-    
+    // Scope to the service card: the Recent Projects tile links to the same
+    // page, which would otherwise trip strict mode.
+    await page.click('.service-card a[href="heavy-hauling.html"]');
+
     // Check we're on the Heavy Hauling page
     await expect(page).toHaveURL(/heavy-hauling\.html/);
     await expect(page.locator('.service-hero h1')).toContainText('Heavy Hauling Services');
-    
-    // Navigate back to home
+
+    // Below 768px the nav collapses behind the hamburger, so it has to be
+    // opened before its links are clickable.
+    const toggle = page.locator('.menu-toggle');
+    if (await toggle.isVisible()) {
+      await toggle.click();
+    }
     await page.click('nav a[href="index.html"]');
     
     // Check we're back on homepage

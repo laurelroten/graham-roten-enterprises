@@ -641,6 +641,7 @@ h5, h6 {
 
 .about-image img {
   width: 100%;
+  height: auto;
   border-radius: 10px;
   box-shadow: var(--shadow-lg);
 }
