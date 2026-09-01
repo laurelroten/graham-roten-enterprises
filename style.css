@@ -1272,3 +1272,88 @@ textarea:focus-visible,
     scroll-behavior: auto !important;
   }
 }
+
+/* ---- Work-in-progress notice ----
+   Sits above the sticky navbar, so it scrolls away and the nav still pins to
+   the top. Dismissible, and the dismissal is remembered per browser. */
+.site-notice {
+  background: var(--gray-900);
+  color: var(--white);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.site-notice[hidden] {
+  display: none;
+}
+
+.site-notice-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.6rem 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Plain inline, not flex: a flex container would treat the trailing full
+   stop after the phone link as its own item and add a gap before it. */
+.site-notice-text {
+  text-align: center;
+}
+
+.site-notice-text i {
+  color: var(--highlight-color);
+  margin-right: 0.45rem;
+}
+
+/* The phone number is the point of the notice, so it reads as a link.
+   Brand blue is too dark on this ground; white underlined carries better. */
+.site-notice a {
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+
+.site-notice a:hover {
+  color: var(--gray-300);
+}
+
+.site-notice-close {
+  background: none;
+  border: none;
+  color: var(--gray-300);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.5rem;
+  margin: -0.5rem -0.5rem -0.5rem 0;
+  flex-shrink: 0;
+}
+
+.site-notice-close:hover {
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .site-notice {
+    font-size: 0.8125rem;
+  }
+
+  .site-notice-inner {
+    padding: 0.5rem 16px;
+    gap: 0.5rem;
+  }
+}
+
+/* Two copy lengths: the full sentence has room on desktop, but runs to three
+   lines on a phone and pushes the hero down. Only one is ever rendered. */
+.notice-brief { display: none; }
+
+@media (max-width: 768px) {
+  .notice-full { display: none; }
+  .notice-brief { display: inline; }
+}

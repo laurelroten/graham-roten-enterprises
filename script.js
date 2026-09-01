@@ -1,9 +1,36 @@
+// Runs as soon as the script is parsed (it sits at the end of <body>), so a
+// previously dismissed notice never flashes before being hidden.
+(function hideDismissedNotice() {
+  try {
+    if (localStorage.getItem('grNoticeDismissed') === '1') {
+      const notice = document.getElementById('site-notice');
+      if (notice) notice.hidden = true;
+    }
+  } catch (e) {
+    // Storage blocked: show the notice, which is the safe default.
+  }
+})();
+
 function toggleMenu() {
   const nav = document.getElementById('nav');
   const open = nav.classList.toggle('active');
   // Tell screen readers whether the menu is open, not just that a button exists.
   const button = document.querySelector('.menu-toggle');
   if (button) button.setAttribute('aria-expanded', String(open));
+}
+
+/**
+ * Hide the work-in-progress notice and remember it for this browser.
+ * Storage is wrapped because private browsing can throw on write.
+ */
+function dismissNotice() {
+  const notice = document.getElementById('site-notice');
+  if (notice) notice.hidden = true;
+  try {
+    localStorage.setItem('grNoticeDismissed', '1');
+  } catch (e) {
+    // Storage unavailable — the notice simply returns on the next visit.
+  }
 }
 
 /** True when the visitor has asked their OS to minimise animation. */

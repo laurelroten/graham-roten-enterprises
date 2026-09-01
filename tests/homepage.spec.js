@@ -21,6 +21,23 @@ test.describe('Homepage Tests', () => {
     await expect(page.locator('.company-name')).toContainText('GR Enterprises');
   });
 
+  test('should show a dismissible work-in-progress notice', async ({ page }) => {
+    const notice = page.locator('#site-notice');
+    await expect(notice).toBeVisible();
+
+    // The point of the notice is the phone number, so it must be callable.
+    // Desktop and mobile carry different copy lengths, only one rendered at a
+    // time, so match the visible one rather than the first in the DOM.
+    await expect(notice.locator('a[href="tel:+18282625593"]:visible')).toBeVisible();
+
+    // Dismissing hides it and is remembered on the next page load.
+    await notice.locator('.site-notice-close').click();
+    await expect(notice).toBeHidden();
+
+    await page.reload();
+    await expect(page.locator('#site-notice')).toBeHidden();
+  });
+
   test('should have working navigation menu', async ({ page }) => {
     const viewport = page.viewportSize();
     const isMobile = viewport.width <= 768;
